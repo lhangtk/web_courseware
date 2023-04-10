@@ -1,0 +1,12 @@
+{
+  "files.autoSave": "off",
+  "eslint.validate": [
+    "typescript"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint":true,
+    "source.fixAll.markdownlint": true
+  },
+  "cmake.configureOnOpen": false,
+  "typescript.preferences.importModuleSpecifier": "non-relative"
+}

@@ -1,0 +1,28 @@
+{
+  "name": "web_lib_template",
+  "version": "1.0.0",
+  "description": "章节渲染器",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "vite --mode development",
+    "preview": "npm run build && vite preview",
+    "build": "vite build --config vite.config.lib.ts --mode production && vite build --config vite.config.css.ts && npm run types",
+    "types": "dts-bundle-generator -o dist/lib.d.ts src/module/index.ts "
+  },
+  "author": "hangli2",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
+    "dts-bundle-generator": "^8.0.0",
+    "eslint": "^8.38.0",
+    "eslint-config-dxk": "0.0.8",
+    "eslint-plugin-jsdoc": "^40.1.2",
+    "eslint-plugin-vue": "^9.10.0",
+    "sass": "^1.61.0",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1"
+  }
+}

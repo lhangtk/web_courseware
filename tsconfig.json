@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "module": "esnext",
+    "target": "esnext",
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "strict": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    // "suppressImplicitAnyIndexErrors": true,
+
+    // "emitDeclarationOnly": true,
+    // "declaration": true,
+    // "declarationDir": "dist", 
+    // "outFile": "types/index.d.ts",
+
+    "baseUrl": ".",
+    "outDir": "./build/",
+    "rootDir": "./src/",
+    "types": [
+      "vite/client","node"
+    ],
+    "typeRoots": [
+      "node_modules/@types",
+    ],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "jsx": "preserve",
+    "importHelpers": false
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "test",
+    "html"
+  ],
+  "include": [
+    "./src/**/*", "types/**/*.d.ts"
+  ]
+}

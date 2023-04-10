@@ -1,0 +1,15 @@
+bin
+.vscode
+modules
+patches
+node_modules
+docs
+src
+scripts
+electron-container-dxk
+tsconfig_editor.json
+tsconfig.json
+vite.config.editor.ts
+vite.config.ts
+
+
