@@ -4,8 +4,8 @@
     "typescript"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint":true,
-    "source.fixAll.markdownlint": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.markdownlint": "explicit"
   },
   "cmake.configureOnOpen": false,
   "typescript.preferences.importModuleSpecifier": "non-relative"
