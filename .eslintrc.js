@@ -15,5 +15,7 @@ module.exports = {
   ],
   plugins: [],
   // 在此处添加自定义规则
-  rules: {}
+  rules: {
+    
+  }
 }

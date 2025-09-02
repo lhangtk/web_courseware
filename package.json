@@ -7,8 +7,9 @@
     "start": "npm run dev",
     "dev": "vite --mode development",
     "preview": "npm run build && vite preview",
-    "build": "vite build --config vite.config.lib.ts --mode production && vite build --config vite.config.css.ts && npm run types",
-    "types": "dts-bundle-generator -o dist/lib.d.ts src/module/index.ts "
+    "build": "vite build --config vite.config.lib.ts --mode production && npm run css && npm run types",
+    "types": "dts-bundle-generator -o dist/lib.d.ts src/module/index.ts ",
+    "css": "vite build --config vite.config.css.ts"
   },
   "author": "hangli2",
   "license": "ISC",
@@ -18,7 +19,7 @@
     "@typescript-eslint/parser": "^5.57.1",
     "dts-bundle-generator": "^8.0.0",
     "eslint": "^8.38.0",
-    "eslint-config-dxk": "^0.0.8",
+    "eslint-config-dxk": "^0.0.10",
     "eslint-plugin-jsdoc": "^40.1.2",
     "eslint-plugin-vue": "^9.10.0",
     "sass": "^1.61.0",
