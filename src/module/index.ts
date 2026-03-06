@@ -1,5 +1,7 @@
-
-
-export const print = (id:string):void=>{
-  document.getElementById(id)!.innerText = 'hello world!'
-}
+export { renderCoursePage, createCourseApp } from 'src/courseware/render'
+export type {
+  CourseSession,
+  Chapter,
+  KnowledgePoint,
+  DemoConfig,
+} from 'src/courseware/types'

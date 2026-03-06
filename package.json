@@ -8,6 +8,7 @@
     "dev": "vite --mode development",
     "preview": "npm run build && vite preview",
     "build": "vite build --config vite.config.lib.ts --mode production && npm run css && npm run types",
+    "build:pages": "vite build --mode production",
     "types": "dts-bundle-generator -o dist/lib.d.ts src/module/index.ts ",
     "css": "vite build --config vite.config.css.ts"
   },

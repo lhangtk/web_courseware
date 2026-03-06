@@ -38,13 +38,10 @@ export default defineConfig({
     sourcemap: false,
     target: `chrome91`,
     outDir: 'dist',
-    lib: {
-      entry: './src/module/editor.ts',
-      formats: ['cjs'],
-    },
     rollupOptions: {
       input: {
-        main: resolve(PACKAGE_ROOT, 'index.html')
+        main: resolve(PACKAGE_ROOT, 'index.html'),
+        lecture: resolve(PACKAGE_ROOT, 'src/pages/lecture.html')
       },
       output: {
         chunkFileNames: 'js/[name]-[hash].js',
