@@ -66,7 +66,7 @@ export const lecture1: Lecture = {
             '计算布局',
             '绘制像素',
           ],
-          direction: 'horizontal',
+          direction: 'vertical',
         },
         {
           type: 'narrative',

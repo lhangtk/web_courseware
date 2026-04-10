@@ -20,39 +20,56 @@ loadAndSetEnv(process.env.MODE, process.cwd())
 /**
  * @see https://vitejs.dev/config/
  */
-export default defineConfig({
-  root: PACKAGE_ROOT,
-  base: './',
-  resolve: {
-    alias: {
-      'src': resolve(PACKAGE_ROOT, 'src')
-    },
-  },
-  plugins: [
-  ],
-  server: {
-    host: '0.0.0.0',
-    port: 3001
-  },
-  build: {
-    sourcemap: false,
-    target: `chrome91`,
-    outDir: 'dist/js',
-    lib: {
-      entry: './src/module/index.ts',
-      formats: ['es'],
-    },
-    rollupOptions: {
-      // input: {
-      // styles: './src/static/content.scss',
-      // entry:'./src/module/editor.ts',
-      // },
-      output: {
-        entryFileNames: 'lib.js',
-        assetFileNames: '[name].[ext]',
+export default defineConfig(({ mode }) => {
+  const isPagesBuild = mode === 'production'
+
+  return {
+    root: PACKAGE_ROOT,
+    base: './',
+    resolve: {
+      alias: {
+        'src': resolve(PACKAGE_ROOT, 'src')
       },
     },
-    emptyOutDir: true,
-  },
+    plugins: [
+    ],
+    server: {
+      host: '0.0.0.0',
+      port: 3001
+    },
+    build: isPagesBuild ? {
+      sourcemap: false,
+      target: 'chrome91',
+      outDir: 'dist',
+      rollupOptions: {
+        input: {
+          index: resolve(PACKAGE_ROOT, 'src/pages/index.html'),
+          lecture: resolve(PACKAGE_ROOT, 'src/pages/lecture.html'),
+          'lecture-1': resolve(PACKAGE_ROOT, 'src/pages/lecture-1.html'),
+          'lecture-2': resolve(PACKAGE_ROOT, 'src/pages/lecture-2.html'),
+        },
+        output: {
+          entryFileNames: 'js/[name]-[hash].js',
+          assetFileNames: 'assets/[name]-[hash][extname]',
+        },
+      },
+      emptyOutDir: true,
+    } : {
+      sourcemap: false,
+      target: 'chrome91',
+      outDir: 'dist/js',
+      lib: {
+        entry: './src/module/index.ts',
+        formats: ['es'],
+      },
+      rollupOptions: {
+        output: {
+          entryFileNames: 'lib.js',
+          assetFileNames: '[name].[ext]',
+        },
+      },
+      emptyOutDir: true,
+    },
+  }
 })
 

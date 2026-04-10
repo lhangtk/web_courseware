@@ -41,7 +41,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(PACKAGE_ROOT, 'index.html'),
-        lecture: resolve(PACKAGE_ROOT, 'src/pages/lecture.html')
+        lecture: resolve(PACKAGE_ROOT, 'src/pages/lecture.html'),
+        'lecture-1': resolve(PACKAGE_ROOT, 'src/pages/lecture-1.html'),
+        'lecture-2': resolve(PACKAGE_ROOT, 'src/pages/lecture-2.html')
       },
       output: {
         chunkFileNames: 'js/[name]-[hash].js',
